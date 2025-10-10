@@ -32,8 +32,8 @@ if [ ! -f "$LOCKFILE" ]; then
 
   if [ -f "$POLYDOCK_APP_IMAGE_DB_FILENAME" ]; then
     echo "Removing collation from DB ..."
-    sed -i 's/COLLATE=utf8mb3_uca1400_ai_ci //g' $POLYDOCK_APP_IMAGE_DB_FILENAME
-    sed -i 's/COLLATE=utf8mb4_uca1400_ai_ci //g' $POLYDOCK_APP_IMAGE_DB_FILENAME
+    sed -i 's/COLLATE=utf8mb3_uca1400_ai_ci.*;/;/g' $POLYDOCK_APP_IMAGE_DB_FILENAME
+    sed -i 's/COLLATE=utf8mb4_uca1400_ai_ci.*;/;/g' $POLYDOCK_APP_IMAGE_DB_FILENAME
     echo "Loading database image"
     cat $POLYDOCK_APP_IMAGE_DB_FILENAME | drush sql-cli
     echo "Database image loaded"
@@ -70,3 +70,37 @@ cd /app
 
 echo "Now running the tasks that should run on every deploy"
 drush cr
+drush sapi-r -y
+drush sapi-i -
+if [ ! -z "$AI_DB_USERNAME" ]; then
+    echo "Importing amazee Private AI AI_DB_USERNAME"
+    drush config:set ai_provider_amazeeio.settings postgres_username $AI_DB_USERNAME -y
+    drush config:set search_api.server.umami_recipe_server backend_config.database_settings.database_name $AI_DB_NAME -y
+fi;
+
+if [ ! -z "$AI_DB_USERNAME" ]; then
+    echo "Resaving umami_recipe_server to create tables"
+    drush entity:save search_api_server umami_recipe_server
+fi;
+
+if [ ! -z "$POLYDOCK_GENERATED_APP_ADMIN_USERNAME" ]; then
+    echo "Updating admin username to $POLYDOCK_GENERATED_APP_ADMIN_USERNAME"
+    echo "update users_field_data set name='$POLYDOCK_GENERATED_APP_ADMIN_USERNAME' where name='admin'" | drush sql-cli
+    drush cr
+    
+    if [ ! -z "$POLYDOCK_GENERATED_APP_ADMIN_PASSWORD" ]; then
+        echo "Updating $POLYDOCK_GENERATED_APP_ADMIN_USERNAME password";
+        drush upwd "$POLYDOCK_GENERATED_APP_ADMIN_USERNAME" "$POLYDOCK_GENERATED_APP_ADMIN_PASSWORD"
+    fi;
+fi;
+
+echo "Created $LOCKFILE to ensure we don't run more than once"
+touch $LOCKFILE
+fi;
+
+cd /app
+
+echo "Now running the tasks that should run on every deploy"
+drush cr
+drush sapi-r -y
+drush sapi-i -
