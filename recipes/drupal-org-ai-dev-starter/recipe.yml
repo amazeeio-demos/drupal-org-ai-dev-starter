@@ -1,0 +1,37 @@
+name: Drupal AI Dev Starter
+type: Site
+description: Drupal CMS (starter) plus the amazee.ai dev-starter demo — the full amazee.ai + Drupal AI toolkit with CKEditor AI widgets, AI search and webforms.
+recipes:
+  - drupal_cms_starter
+  - amazeeio_ckeditor_widgets
+install:
+  - ai_search
+  - webform
+config:
+  strict: false
+  actions:
+    ai.settings:
+      simpleConfigUpdate:
+        default_providers:
+          chat:
+            provider_id: amazeeio
+            model_id: chat
+          chat_with_complex_json:
+            provider_id: amazeeio
+            model_id: chat_with_complex_json
+          chat_with_image_vision:
+            provider_id: amazeeio
+            model_id: chat_with_image_vision
+          chat_with_structured_response:
+            provider_id: amazeeio
+            model_id: chat
+          chat_with_tools:
+            provider_id: amazeeio
+            model_id: chat
+          embeddings:
+            provider_id: amazeeio
+            model_id: embeddings
+    system.site:
+      simpleConfigUpdate:
+        page:
+          front: /instructions

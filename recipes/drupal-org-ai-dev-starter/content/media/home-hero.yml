@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e593b567-2ff6-483e-9d80-ccbd49230c2c
+  bundle: image
+  default_langcode: en
+  depends:
+    e213cf9c-090d-47fb-bd7d-a1532f69f08a: file
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'amazee-io-Drupal-AI-Screen-Saver (1).jpg'
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'drupal ai screen saver'
+      title: ''
+      width: 1080
+      height: 440
+      entity: e213cf9c-090d-47fb-bd7d-a1532f69f08a

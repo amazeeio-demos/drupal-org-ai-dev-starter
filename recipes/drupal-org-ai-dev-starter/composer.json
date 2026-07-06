@@ -1,0 +1,9 @@
+{
+    "name": "amazeeio-demos/drupal-org-ai-dev-starter",
+    "description": "Site template for the drupal.org/ai dev-starter demo.",
+    "type": "drupal-recipe",
+    "require": {
+        "drupal/ai_provider_amazeeio_recipe": "*",
+        "drupal/amazeeio_ckeditor_widgets": "*"
+    }
+}
