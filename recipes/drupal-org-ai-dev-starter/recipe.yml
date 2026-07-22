@@ -5,6 +5,7 @@ recipes:
   - drupal_cms_starter
   - amazeeio_ckeditor_widgets
 install:
+  - ai_dashboard
   - ai_search
   - webform
 config:
