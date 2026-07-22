@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e939b485-ca10-4061-9036-3d6d394d7214
+  bundle: page
+  default_langcode: en
+  depends:
+    e593b567-2ff6-483e-9d80-ccbd49230c2c: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /instructions
+      langcode: en
+      pathauto: 0
+  field_content:
+    -
+      value: '<p><strong>Welcome </strong>to the Drupal CMS + AI free trial powered by amazee.ai!&nbsp;</p><p>Please note this trial is geared for developers as you will need to enable the AI capabilities. This is not for those who want to just experience what AI can do with Drupal CMS.&nbsp;</p><p>To learn more about enabling AI please see: <a href="https://www.drupal.org/project/ai">https://www.drupal.org/project/ai</a></p><p>If you are looking for our other experiences please visit <a href="https://try.amazee.ai/">https://try.amazee.ai/</a> and choose from the drop-down menu.&nbsp;</p><p>To get started with this experience please follow these guidelines:<br><br><strong>Step 1: </strong>Click <strong>Extend</strong></p><drupal-media data-entity-type="media" data-entity-uuid="6948d9c8-3a36-4dbb-ab00-6f9f7eef5ef6">&nbsp;</drupal-media><p><br><strong>Step 2:</strong> Choose which <strong>AI capabilities </strong>you''d like to enable</p><drupal-media data-entity-type="media" data-entity-uuid="7c6d7fbe-4a39-4315-b9a1-933de6fc8a16">&nbsp;</drupal-media><p><strong>Step 3:</strong> Experiment with AI 🥳!</p>'
+      format: content_format
+  field_description:
+    -
+      value: 'This is the welcome page for the amazee.ai free trial'
+  field_featured_image:
+    -
+      entity: e593b567-2ff6-483e-9d80-ccbd49230c2c

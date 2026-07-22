@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 9d5d5acc-b3dd-4d9c-bb31-d8b9cdec2f0a
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'CleanShot-2025-04-25-at-13.30.28-2x.png'
+  uri:
+    -
+      value: 'public://2025-04/CleanShot-2025-04-25-at-13.30.28-2x.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 396407
+  status:
+    -
+      value: true

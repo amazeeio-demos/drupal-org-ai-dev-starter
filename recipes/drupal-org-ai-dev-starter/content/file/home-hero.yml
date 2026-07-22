@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e213cf9c-090d-47fb-bd7d-a1532f69f08a
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'amazee-io-Drupal-AI-Screen-Saver-1.jpg'
+  uri:
+    -
+      value: 'public://2025-04/amazee-io-Drupal-AI-Screen-Saver-1.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 293892
+  status:
+    -
+      value: true
